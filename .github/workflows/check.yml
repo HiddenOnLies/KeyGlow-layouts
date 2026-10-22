@@ -1,0 +1,27 @@
+name: check layouts
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install git+https://github.com/HiddenOnLies/KeyGlow
+      - name: Validate every layout
+        run: keyglow workshop layouts --bundle /tmp/layouts.json
+      - name: layouts.json is up to date
+        run: |
+          python - <<'PY'
+          import json, sys
+          built = json.load(open("/tmp/layouts.json"))["layouts"]
+          committed = json.load(open("layouts.json"))["layouts"]
+          if built != committed:
+              sys.exit("layouts.json is out of date: run `keyglow workshop layouts --bundle layouts.json`")
+          print(f"{len(built)} layouts, bundle up to date")
+          PY

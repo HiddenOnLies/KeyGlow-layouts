@@ -48,6 +48,8 @@ tested, and a verified layout for the same keyboard always wins.
 
 - `usb`: `"vendor:product"` IDs in hex, how KeyGlow recognizes the keyboard (preferred).
 - `names`: OpenRGB device names, used when no USB ID matches.
+- `name` (optional): an internal ID. Reuse a KeyGlow built-in layout name (like
+  `alloy_origins_65`) when your layout has the same shape, so existing profiles match it exactly.
 - `keys`: KeyGlow key IDs (`ESC`, `A`, `LSHIFT`, `NUM_7`, `MEDIA_PLAY`…). Run
   `keyglow layout ansi_full --json` to see a full example.
 

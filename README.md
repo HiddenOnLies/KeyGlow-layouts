@@ -50,6 +50,9 @@ tested, and a verified layout for the same keyboard always wins.
 - `names`: OpenRGB device names, used when no USB ID matches.
 - `name` (optional): an internal ID. Reuse a KeyGlow built-in layout name (like
   `alloy_origins_65`) when your layout has the same shape, so existing profiles match it exactly.
+- `caps_lock_indicator` (optional): `true` if the keyboard has its own Caps Lock light that still
+  works while OpenRGB controls the colors, `false` if it doesn't. When it's `false` or missing,
+  KeyGlow lights the Caps Lock key while Caps Lock is on.
 - `keys`: KeyGlow key IDs (`ESC`, `A`, `LSHIFT`, `NUM_7`, `MEDIA_PLAY`…). Run
   `keyglow layout ansi_full --json` to see a full example.
 

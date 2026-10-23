@@ -1,6 +1,6 @@
 {
  "format": "keyglow-layouts/1",
- "generated": "2026-10-22",
+ "generated": "2026-10-23",
  "layouts": [
   {
    "name": "rog_azoth_iso",
@@ -1181,6 +1181,7 @@
     "HyperX Alloy Origins 65"
    ],
    "verified": true,
+   "caps_lock_indicator": false,
    "keys": [
     {
      "id": "ESC",
